@@ -38,7 +38,7 @@ jobs:
         run:  find dist/assets/*.js -type f -execdir echo 'script-file={}'  >> $GITHUB_OUTPUT ';'
       - name: List Component filenames
         id: list
-        run: find src/components/*.jsx -type f -execdir echo 'component-file={}' >> $GITHUB_OUTPUT ';'
+        run: ls src/components/*.jsx -type f -execdir echo 'component-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
